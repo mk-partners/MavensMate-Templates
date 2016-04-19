@@ -17,6 +17,19 @@
                     "default":"Account"
                 }
             ]
+        },
+        {  
+            "name":"Test Data Factory",
+            "file_name":"TestDataFactory.cls",
+            "description":"An Apex Class that creates Test Data",
+            "author":"MavensMate",
+            "params":[  
+                {  
+                    "name":"api_name",
+                    "description":"Apex Class API Name",
+                    "default":"testDataFactory"
+                }
+            ]
         }
     ],
     "ApexComponent":[  
