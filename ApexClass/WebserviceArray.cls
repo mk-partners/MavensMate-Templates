@@ -15,12 +15,12 @@ global class {{ api_name }} {
 	}
 
 	/**
-	* @name doPost
+	* @name handlePost
 	* @date 4/20/2016
 	* @description Handles the POST operation
 	**/
 	@HttpPost
-	global static void doPost() {
+	global static void handlePost() {
 		
 		// Parse the POST body
 		String requestBody = RestContext.request.requestBody.toString();
