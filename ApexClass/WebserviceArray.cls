@@ -24,7 +24,7 @@ global class {{ api_name }} {
 		
 		// Parse the POST body
 		String requestBody = RestContext.RestContext.request.requestBody.toString();
-		RecordWrapper[] requestRecords;
+		List<RecordWrapper> requestRecords;
 		try {
 			requestRecords = (RecordWrapper[])JSON.deserializeUntyped( requestBody );
 		} catch (Exception e) {
