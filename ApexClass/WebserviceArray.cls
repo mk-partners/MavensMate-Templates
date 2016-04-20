@@ -56,7 +56,7 @@ global class {{ api_name }} {
 				if ( fieldMapping.containsKey(s) ) {
 
 					if ( s == 'field_with_custom_logic' ) {
-						// do custom logic
+						// TODO: Any custom logic for certain fields
 					} else {
 						record.put(fieldMapping.get(s), wMap.get(s));	
 					}
