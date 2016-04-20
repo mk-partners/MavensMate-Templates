@@ -6,6 +6,7 @@
 */
 @RestResource(urlMapping='/FILL_ME_IN/*')
 global class {{ api_name }} {
+// TODO: Fill in the urlMapping
 
 	global class RecordWrapper {
 		// TODO: Fill in the remaining fields
@@ -20,7 +21,7 @@ global class {{ api_name }} {
 	* @description Handles the POST operation
 	**/
 	@HttpPost
-	global static void handlePost() {
+	global static List<RecordWrapper> handlePost() {
 		
 		// Parse the POST body
 		String requestBody = RestContext.request.requestBody.toString();
@@ -28,11 +29,12 @@ global class {{ api_name }} {
 		try {
 			requestRecords = (List<RecordWrapper>)JSON.deserializeUntyped( requestBody );
 		} catch (Exception e) {
-			// TODO: Handle parsing error
-			
+			// TODO: Handle parsing errors
+
 			System.Debug(e);
 			return;
 		}
+
 
 		// Loop through input records
 		Map<Integer, {{ object_name }}> recordMap = new Map<Integer, {{ object_name }}>();
@@ -49,6 +51,8 @@ global class {{ api_name }} {
 			wrapperMap.put(i, w);
 		}
 
+
+		// Update the {{ object_name }} records in Salesforce and return results
 		List<Database.UpsertResult> results = Database.upsert(recordMap.values()); 
 		for ( Integer i = 0; i < results.size(); i++ ) {
 			Database.UpsertResult result = results[i];
@@ -59,5 +63,6 @@ global class {{ api_name }} {
 			}
 		}
 
+		return wrapperMap.values();
 	}
 }
