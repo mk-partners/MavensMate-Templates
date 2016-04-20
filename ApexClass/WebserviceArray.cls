@@ -70,15 +70,15 @@ global class {{ api_name }} {
 
 
 		// Update the {{ object_name }} records in Salesforce and return results
-		//List<Database.UpsertResult> results = Database.upsert(recordMap.values()); 
-		//for ( Integer i = 0; i < results.size(); i++ ) {
-		//	Database.UpsertResult result = results[i];
-		//	if ( result.isSuccess() ) {
-		//		wrapperMap.get(i).salesforceId = result.getId();
-		//	} else {
-		//		wrapperMap.get(i).error = result.getErrors()[0].getMessage();
-		//	}
-		//}
+		List<Database.UpsertResult> results = Database.upsert(recordMap.values()); 
+		for ( Integer i = 0; i < results.size(); i++ ) {
+			Database.UpsertResult result = results[i];
+			if ( result.isSuccess() ) {
+				wrapperMap.get(i).salesforceId = result.getId();
+			} else {
+				wrapperMap.get(i).error = result.getErrors()[0].getMessage();
+			}
+		}
 
 		List<RecordWrapper> returnResults = wrapperMap.values();
 		return returnResults;
