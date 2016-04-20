@@ -26,7 +26,7 @@ global class {{ api_name }} {
 	* @description Handles the POST operation
 	**/
 	@HttpPost
-	global static List<Object> handlePost() {
+	global static (Map<String,Object>) handlePost() {
 		
 		// Parse the POST body
 		String requestBody = RestContext.request.requestBody.toString();
@@ -79,7 +79,7 @@ global class {{ api_name }} {
 		//}
 
 
-		List<Object> returnResults = wrapperMap.values();
+		(Map<String,Object>) returnResults = (Map<String,Object>)(wrapperMap.values());
 		return returnResults;
 	}
 }
