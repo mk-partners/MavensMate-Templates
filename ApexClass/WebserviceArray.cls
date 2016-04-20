@@ -37,7 +37,7 @@ global class {{ api_name }} {
 			// TODO: Handle parsing errors
 
 			System.Debug(e);
-			return;
+			return null;
 		}
 
 
