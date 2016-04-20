@@ -37,9 +37,9 @@ global class {{ api_name }} {
 		Map<String, RecordWrapper> wrapperMap = new Map<String, RecordWrapper>();
 		for ( Integer i = 0; i < requestRecords.size(); i++ ) {
 			RecordWrapper w = requestRecords[i];
-			SObject record = new SObject();
+			{{ object_name }} record = new {{ object_name }}();
 
-			// TODO: Create the SObject from the wrapper
+			// TODO: Create the {{ object_name }} from the wrapper
 
 			recordMap.put(i, record);
 			wrapperMap.put(i, w);
