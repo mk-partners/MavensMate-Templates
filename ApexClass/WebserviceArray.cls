@@ -15,19 +15,24 @@ global class {{ api_name }} {
 		global String error;
 	}
 
+	// Map of webservice field names to Salesforce {{ object_name }} API names
+	public static Map<String, String> fieldMapping = new Map<String, String> {
+		'name' => 'Name'
+	};
+
 	/**
 	* @name handlePost
 	* @date 4/20/2016
 	* @description Handles the POST operation
 	**/
 	@HttpPost
-	global static List<RecordWrapper> handlePost() {
+	global static List<Object> handlePost() {
 		
 		// Parse the POST body
 		String requestBody = RestContext.request.requestBody.toString();
-		List<RecordWrapper> requestRecords;
+		List<Object> requestRecords;
 		try {
-			requestRecords = (List<RecordWrapper>)JSON.deserializeUntyped( requestBody );
+			requestRecords = (List<Object>)JSON.deserializeUntyped( requestBody );
 		} catch (Exception e) {
 			// TODO: Handle parsing errors
 
@@ -38,14 +43,24 @@ global class {{ api_name }} {
 
 		// Loop through input records
 		Map<Integer, {{ object_name }}> recordMap = new Map<Integer, {{ object_name }}>();
-		Map<Integer, RecordWrapper> wrapperMap = new Map<Integer, RecordWrapper>();
+		Map<Integer, Object> wrapperMap = new Map<Integer, Object>();
 		for ( Integer i = 0; i < requestRecords.size(); i++ ) {
 			
-			RecordWrapper w = requestRecords[i];
+			Object w = requestRecords[i];
 			{{ object_name }} record = new {{ object_name }}();
 
 			// TODO: Construct the {{ object_name }} from the wrapper
+			Map<String, Object> wMap = (Map<String, Object>)w;
+			for ( String s : wMap.keySet() ) {
+				if ( fieldMapping.containsKey(s) ) {
 
+					if ( s == 'field_with_custom_logic' ) {
+						// do custom logic
+					} else {
+						record.put(fieldMapping.get(s), wMap.get(s));	
+					}
+				}
+			}
 
 			recordMap.put(i, record);
 			wrapperMap.put(i, w);
