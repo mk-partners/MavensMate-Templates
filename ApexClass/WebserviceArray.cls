@@ -23,7 +23,7 @@ global class {{ api_name }} {
 	global static void doPost() {
 		
 		// Parse the POST body
-		String requestBody = RestContext.RestContext.request.requestBody.toString();
+		String requestBody = RestContext.request.requestBody.toString();
 		List<RecordWrapper> requestRecords;
 		try {
 			requestRecords = (RecordWrapper[])JSON.deserializeUntyped( requestBody );
