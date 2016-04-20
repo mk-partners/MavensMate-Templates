@@ -78,6 +78,7 @@ global class {{ api_name }} {
 			}
 		}
 
-		return wrapperMap.values();
+		List<Object> returnResults = wrapperMap.values();
+		return returnResults;
 	}
 }
