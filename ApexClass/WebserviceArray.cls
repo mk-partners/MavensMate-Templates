@@ -27,13 +27,13 @@ global class {{ api_name }} {
 	* @description Handles the POST operation
 	**/
 	@HttpPost
-	global static Map<String,Object> postMethod() {
+	global static List<RecordWrapper> postMethod() {
 		
 		// Parse the POST body
 		String requestBody = RestContext.request.requestBody.toString();
-		List<Object> requestRecords;
+		List<RecordWrapper> requestRecords;
 		try {
-			requestRecords = (List<Object>)JSON.deserializeUntyped( requestBody );
+			requestRecords = (List<RecordWrapper>)JSON.deserializeUntyped( requestBody );
 		} catch (Exception e) {
 			// TODO: Handle parsing errors
 
@@ -44,10 +44,10 @@ global class {{ api_name }} {
 
 		// Loop through input records
 		Map<Integer, {{ object_name }}> recordMap = new Map<Integer, {{ object_name }}>();
-		Map<Integer, Object> wrapperMap = new Map<Integer, Object>();
+		Map<Integer, RecordWrapper> wrapperMap = new Map<Integer, RecordWrapper>();
 		for ( Integer i = 0; i < requestRecords.size(); i++ ) {
 			
-			Object w = requestRecords[i];
+			RecordWrapper w = requestRecords[i];
 			{{ object_name }} record = new {{ object_name }}();
 
 			// TODO: Construct the {{ object_name }} from the wrapper
@@ -79,7 +79,7 @@ global class {{ api_name }} {
 		//	}
 		//}
 
-		Map<String,Object> returnResults = (Map<String,Object>)(wrapperMap.values());
+		List<RecordWrapper> returnResults = wrapperMap.values();
 		return returnResults;
 	}
 }
