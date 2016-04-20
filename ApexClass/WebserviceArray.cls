@@ -51,7 +51,7 @@ global class {{ api_name }} {
 			{{ object_name }} record = new {{ object_name }}();
 
 			// TODO: Construct the {{ object_name }} from the wrapper
-			Map<String, Object> wMap = (Map<String, Object>)w;
+			Map<String, Object> wMap = (Map<String, Object>)JSON.serialize(w);
 			for ( String s : wMap.keySet() ) {
 				if ( fieldMapping.containsKey(s) ) {
 
