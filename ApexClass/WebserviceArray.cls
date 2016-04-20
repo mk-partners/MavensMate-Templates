@@ -26,7 +26,7 @@ global class {{ api_name }} {
 		String requestBody = RestContext.RestContext.request.requestBody.toString();
 		RecordWrapper[] requestRecords;
 		try {
-			requestRecords = (RecordWrapper[])JSON.deserializeUntyped( requestBody )
+			requestRecords = (RecordWrapper[])JSON.deserializeUntyped( requestBody );
 		} catch (Exception e) {
 			// TODO: Handle parsing error
 			System.Debug(e);
