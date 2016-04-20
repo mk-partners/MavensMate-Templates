@@ -30,6 +30,19 @@
                     "default":"testDataFactory"
                 }
             ]
+        },
+        {  
+            "name":"Webservice - Array",
+            "file_name":"WebserviceArray.cls",
+            "description":"An Apex Class that receives an array of JSON data",
+            "author":"MavensMate",
+            "params":[  
+                {  
+                    "name":"api_name",
+                    "description":"Apex Class API Name",
+                    "default":"webserviceArray"
+                }
+            ]
         }
     ],
     "ApexComponent":[  
