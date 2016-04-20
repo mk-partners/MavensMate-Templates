@@ -34,15 +34,15 @@ global class {{ api_name }} {
 		}
 
 		// Loop through input records
-		Map<String, {{ object_name }}> recordMap = new Map<String, {{ object_name }}>();
-		Map<String, RecordWrapper> wrapperMap = new Map<String, RecordWrapper>();
+		Map<Integer, {{ object_name }}> recordMap = new Map<Integer, {{ object_name }}>();
+		Map<Integer, RecordWrapper> wrapperMap = new Map<Integer, RecordWrapper>();
 		for ( Integer i = 0; i < requestRecords.size(); i++ ) {
 			
 			RecordWrapper w = requestRecords[i];
 			{{ object_name }} record = new {{ object_name }}();
 
 			// TODO: Construct the {{ object_name }} from the wrapper
-			
+
 
 			recordMap.put(i, record);
 			wrapperMap.put(i, w);
