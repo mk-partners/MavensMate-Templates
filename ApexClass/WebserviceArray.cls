@@ -79,7 +79,6 @@ global class {{ api_name }} {
 		//	}
 		//}
 
-
 		Map<String,Object> returnResults = (Map<String,Object>)(wrapperMap.values());
 		return returnResults;
 	}
