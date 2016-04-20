@@ -15,10 +15,10 @@ global class {{ api_name }} {
 	}
 
 	/**
-    * @name doPost
-    * @date 4/20/2016
-    * @description Handles the POST operation
-    **/
+	* @name doPost
+	* @date 4/20/2016
+	* @description Handles the POST operation
+	**/
 	@HttpPost
 	global static void doPost() {
 		
@@ -34,7 +34,6 @@ global class {{ api_name }} {
 		}
 
 		// Loop through input records
-		SObject[] recordUpserts = new SObject[];
 		Map<String, RecordWrapper> wrapperMap = new Map<String, RecordWrapper>();
 		for ( Integer i = 0; i < requestRecords.size(); i++ ) {
 			RecordWrapper w = requestRecords[i];
