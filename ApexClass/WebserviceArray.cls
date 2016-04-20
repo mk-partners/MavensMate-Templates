@@ -22,12 +22,12 @@ global class {{ api_name }} {
 
 
 	/**
-	* @name handlePost
+	* @name postMethod
 	* @date 4/20/2016
 	* @description Handles the POST operation
 	**/
 	@HttpPost
-	global static Map<String,Object> handlePost() {
+	global static Map<String,Object> postMethod() {
 		
 		// Parse the POST body
 		String requestBody = RestContext.request.requestBody.toString();
