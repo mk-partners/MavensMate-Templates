@@ -15,6 +15,7 @@ global class {{ api_name }} {
 		global String error;
 	}
 
+	// TODO: Fill in the remaining field mappings
 	// Map of webservice field names to Salesforce {{ object_name }} API names
 	public static Map<String, String> fieldMapping = new Map<String, String> {
 		'name' => 'Name'
