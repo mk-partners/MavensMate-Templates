@@ -4,7 +4,7 @@
 *
 * @description Webservice class to receive incoming data.
 */
-@RestResource(urlMapping='/FILL_ME_IN/*')
+@RestResource(urlMapping='/FILL_ME_IN_{{ api_name }}/*')
 global class {{ api_name }} {
 
 

@@ -45,20 +45,15 @@
             ]
         },
         {  
-            "name":"Webservice - Array",
+            "name":"Webservice",
             "file_name":"WebserviceArray.cls",
-            "description":"An Apex Class that receives an array of JSON data",
+            "description":"An Apex Webservice that receives data",
             "author":"MavensMate",
             "params":[  
                 {  
                     "name":"api_name",
                     "description":"Apex Class API Name",
                     "default":"webserviceArray"
-                },
-                {
-                    "name":"object_name",
-                    "description":"Object API Name",
-                    "default":"Account"
                 }
             ]
         }
