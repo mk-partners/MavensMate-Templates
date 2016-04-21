@@ -19,6 +19,19 @@
             ]
         },
         {  
+            "name":"Test Class",
+            "file_name":"TestClass.cls",
+            "description":"An Apex Class that contains Unit Tests",
+            "author":"MavensMate",
+            "params":[  
+                {  
+                    "name":"api_name",
+                    "description":"Apex Class API Name",
+                    "default":"account_Tests"
+                }
+            ]
+        },
+        {  
             "name":"Test Data Factory",
             "file_name":"TestDataFactory.cls",
             "description":"An Apex Class that creates Test Data",
