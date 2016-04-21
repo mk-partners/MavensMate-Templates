@@ -27,7 +27,7 @@
                 {  
                     "name":"api_name",
                     "description":"Apex Class API Name",
-                    "default":"account_Helper"
+                    "default":"account_Tests"
                 }
             ]
         },
