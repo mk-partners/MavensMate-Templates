@@ -38,7 +38,7 @@ public class {{ api_name }} {
     * @description
     * @param
     **/
-    public static void afterUpdate(List<{{ object_name }}> newList){
+    public static void afterUpdate(List<{{ object_name }}> newList, List<{{ object_name }}> oldList){
         for ( Integer i=0;i<newList.size();i++ ){
             
         }        
