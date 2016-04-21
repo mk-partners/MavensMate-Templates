@@ -34,6 +34,7 @@ global class {{ api_name }} {
 		SObject[] records = new SObject[] {};
 		List<Map<String, Object>> wrappers = (List<Map<String, Object>>)JSON.deserializeUntyped(input);
 
+		// Process wrappers
 		for ( Map<String, Object> wrapper : wrappers ) {
 			SObject record = Schema.getGlobalDescribe().get('Account').newSObject() ;
 
@@ -49,6 +50,7 @@ global class {{ api_name }} {
 			records.add( record );
 		}
 
+		// Save results
 		List<Database.UpsertResult> results = Database.upsert( records, false ); 
 		for ( Integer i = 0; i < results.size(); i++ ) {
 
