@@ -45,6 +45,19 @@
             ]
         },
         {  
+            "name":"Util",
+            "file_name":"Util.cls",
+            "description":"An Apex Class containing common Utility methods",
+            "author":"MavensMate",
+            "params":[  
+                {  
+                    "name":"api_name",
+                    "description":"Apex Class API Name",
+                    "default":"util"
+                }
+            ]
+        },
+        {  
             "name":"Webservice - Array",
             "file_name":"WebserviceArray.cls",
             "description":"An Apex Class that receives an array of JSON data",
