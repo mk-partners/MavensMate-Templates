@@ -29,14 +29,19 @@ global class {{ api_name }} {
 	* @description Handles the POST operation
 	**/
 	@HttpPost
-	global static String postMethod( String input ) {
+	global static String postMethod() {
 
-		SObject[] records = new SObject[] {};
-		List<Map<String, Object>> wrappers = (List<Map<String, Object>>)JSON.deserializeUntyped(input);
+		String input = RestContext.request.requestBody.toString();
+
+		Account[] records = new Account[] {};
+		List<Map<String, Object>> wrappers = new List<Map<String, Object>>();
+		for ( Object o : (List<Object>)JSON.deserializeUntyped(input) ) {
+			wrappers.add( (Map<String, Object>)o );
+		}
 
 		// Process wrappers
 		for ( Map<String, Object> wrapper : wrappers ) {
-			SObject record = Schema.getGlobalDescribe().get('Account').newSObject() ;
+			Account record = new Account();
 
 			for ( String field : wrapper.keySet() ) {	
 				if ( fieldMap.containsKey( field ) && fieldDescribeMap.containsKey( field ) ) {
