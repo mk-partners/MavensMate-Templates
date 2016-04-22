@@ -56,6 +56,19 @@
                     "default":"webserviceArray"
                 }
             ]
+        },
+        {  
+            "name":"Batchable 1",
+            "file_name":"Batchable.cls",
+            "description":"An Apex Batch Class",
+            "author":"MavensMate",
+            "params":[  
+                {  
+                    "name":"api_name",
+                    "description":"Apex Class API Name",
+                    "default":"batchClass"
+                }
+            ]
         }
     ],
     "ApexComponent":[  
