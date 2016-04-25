@@ -45,6 +45,7 @@
             ]
         },
         {  
+<<<<<<< HEAD
             "name":"Util",
             "file_name":"Util.cls",
             "description":"An Apex Class containing common Utility methods",
@@ -59,19 +60,30 @@
         },
         {  
             "name":"Webservice - Array",
+=======
+            "name":"Webservice",
+>>>>>>> 3339ac07c758cf5205a216291715858a137efce8
             "file_name":"WebserviceArray.cls",
-            "description":"An Apex Class that receives an array of JSON data",
+            "description":"An Apex Webservice that receives data",
             "author":"MavensMate",
             "params":[  
                 {  
                     "name":"api_name",
                     "description":"Apex Class API Name",
                     "default":"webserviceArray"
-                },
-                {
-                    "name":"object_name",
-                    "description":"Object API Name",
-                    "default":"Account"
+                }
+            ]
+        },
+        {  
+            "name":"Batchable 1",
+            "file_name":"Batchable.cls",
+            "description":"An Apex Batch Class",
+            "author":"MavensMate",
+            "params":[  
+                {  
+                    "name":"api_name",
+                    "description":"Apex Class API Name",
+                    "default":"batchClass"
                 }
             ]
         }

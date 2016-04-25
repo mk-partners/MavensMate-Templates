@@ -49,7 +49,7 @@ public class {{ api_name }} {
     * @description
     * @param
     **/
-    public static void beforeDelete(List<{{ object_name }}> newList, List<{{ object_name }}> oldList){
+    public static void beforeDelete(List<{{ object_name }}> newList){
         for ( Integer i=0;i<newList.size();i++ ){
             
         }        

@@ -4,7 +4,7 @@
 *
 * @description Webservice class to receive incoming data.
 */
-@RestResource(urlMapping='/FILL_ME_IN_{{ api_name }}/*')
+@RestResource(urlMapping='/FILL_ME_IN/*')
 global class {{ api_name }} {
 
 
@@ -29,19 +29,13 @@ global class {{ api_name }} {
 	* @description Handles the POST operation
 	**/
 	@HttpPost
-	global static String postMethod() {
+	global static String postMethod( String input ) {
 
-		String input = RestContext.request.requestBody.toString();
+		SObject[] records = new SObject[] {};
+		List<Map<String, Object>> wrappers = (List<Map<String, Object>>)JSON.deserializeUntyped(input);
 
-		Account[] records = new Account[] {};
-		List<Map<String, Object>> wrappers = new List<Map<String, Object>>();
-		for ( Object o : (List<Object>)JSON.deserializeUntyped(input) ) {
-			wrappers.add( (Map<String, Object>)o );
-		}
-
-		// Process wrappers
 		for ( Map<String, Object> wrapper : wrappers ) {
-			Account record = new Account();
+			SObject record = Schema.getGlobalDescribe().get('Account').newSObject() ;
 
 			for ( String field : wrapper.keySet() ) {	
 				if ( fieldMap.containsKey( field ) && fieldDescribeMap.containsKey( field ) ) {
@@ -55,7 +49,6 @@ global class {{ api_name }} {
 			records.add( record );
 		}
 
-		// Save results
 		List<Database.UpsertResult> results = Database.upsert( records, false ); 
 		for ( Integer i = 0; i < results.size(); i++ ) {
 
