@@ -1,5 +1,5 @@
 <apex:page>
-	<apex:sectionHeader title="{{ object_name }} Edit" subtitle="{!IF({{ object_name }}.Id==null,'New {{ object_name }}',{{ object_name }}.Name)}" />
+	<apex:sectionHeader title="{{ object_name }} Edit" />
 	<apex:form id="form" >
 		<apex:pageMessages id="pageMessages" />
 		<apex:pageBlock mode="edit" title="{{ object_name }} Information" >
