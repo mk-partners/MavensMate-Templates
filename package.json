@@ -149,12 +149,17 @@
             "name":"Visualforce Page",
             "file_name":"ApexPage.page",
             "description":"Basic Visualforce Page template",
-            "author":"MavensMate",
+            "author":"MK Partners, Inc.",
             "params":[  
                 {  
                     "name":"api_name",
                     "description":"Visualforce Page API Name",
-                    "default":"MyVisualforcePageName"
+                    "default":"account_Edit"
+                },
+                {  
+                    "name":"object_name",
+                    "description":"Standard Controller Object Name",
+                    "default":"Account"
                 }
             ]
         },
@@ -162,7 +167,7 @@
             "name":"Header and PageBlock",
             "file_name":"HeaderPageBlock.page",
             "description":"Visualforce Page with SectionHeader and PageBlock",
-            "author":"MavensMate",
+            "author":"MK Partners, Inc.",
             "params":[  
                 {  
                     "name":"api_name",
