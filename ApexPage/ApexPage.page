@@ -1,11 +1,11 @@
-<apex:page standardController="Account" >
+<apex:page>
 	<apex:sectionHeader title="{{ object_name }} Edit" subtitle="{!IF({{ object_name }}.Id==null,'New {{ object_name }}',{{ object_name }}.Name)}" />
 	<apex:form id="form" >
 		<apex:pageMessages id="pageMessages" />
 		<apex:pageBlock mode="edit" title="{{ object_name }} Information" >
 			<apex:pageBlockButtons>
-				<apex:commandButton value="Save" action="{!save}" />
-				<apex:commandButton value="Cancel" action="{!cancel}" />
+				<!-- <apex:commandButton value="Save" action="{!save}" /> -->
+				<!-- <apex:commandButton value="Cancel" action="{!cancel}" /> -->
 			</apex:pageBlockButtons>
 			<apex:pageBlockSection title="{{ object_name }} Details" >
 
