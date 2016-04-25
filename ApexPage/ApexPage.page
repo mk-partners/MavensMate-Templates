@@ -1,4 +1,4 @@
-<apex:page standardController="{{ object_name }}" >
+<apex:page standardController="Account" >
 	<apex:sectionHeader title="{{ object_name }} Edit" subtitle="{!IF({{ object_name }}.Id==null,'New {{ object_name }}',{{ object_name }}.Name)}" />
 	<apex:form id="form" >
 		<apex:pageMessages id="pageMessages" />
