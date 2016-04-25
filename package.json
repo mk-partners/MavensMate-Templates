@@ -58,8 +58,21 @@
             ]
         },
         {  
-            "name":"Batchable 1",
+            "name":"Batchable",
             "file_name":"Batchable.cls",
+            "description":"An Apex Batch Class",
+            "author":"MavensMate",
+            "params":[  
+                {  
+                    "name":"api_name",
+                    "description":"Apex Class API Name",
+                    "default":"batchClass"
+                }
+            ]
+        },
+        {  
+            "name":"Batchable Iterable",
+            "file_name":"BatchableIterable.cls",
             "description":"An Apex Batch Class",
             "author":"MavensMate",
             "params":[  
