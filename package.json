@@ -111,6 +111,19 @@
                     "default":"MyVisualforceComponent"
                 }
             ]
+        },
+        {  
+            "name":"Lightbox JS and CSS",
+            "file_name":"Lightbox.component",
+            "description":"JS and CSS for Lightbox",
+            "author":"MK Partners, Inc.",
+            "params":[  
+                {  
+                    "name":"api_name",
+                    "description":"Visualforce Component API Name",
+                    "default":"lightbox"
+                }
+            ]
         }
     ],
     "ApexPage":[  
