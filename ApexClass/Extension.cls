@@ -12,7 +12,7 @@ public with sharing class {{ api_name }} {
 	public PageReference save(){
 		upsert record;
 		if ( !ApexPages.hasMessages() ){
-			return ApexPages.standardController(record).view().setRedirect(true);
+			return new ApexPages.standardController(record).view().setRedirect(true);
 		}
 		return null;
 	}
