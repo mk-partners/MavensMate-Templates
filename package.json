@@ -1,6 +1,24 @@
 {  
     "ApexClass":[  
         {  
+            "name":"Extension",
+            "file_name":"Extension.cls",
+            "description":"An Apex Class that Extends the Standard Controller",
+            "author":"MK Partners, Inc.",
+            "params":[  
+                {  
+                    "name":"api_name",
+                    "description":"Apex Class API Name",
+                    "default":"account_Extension"
+                },
+                {  
+                    "name":"object_name",
+                    "description":"sobject API Name",
+                    "default":"account"
+                }
+            ]
+        },
+        {  
             "name":"Trigger Helper",
             "file_name":"TriggerHelper.cls",
             "description":"An Apex Class that handles Trigger actions",

@@ -1,4 +1,4 @@
-public class util {
+public class {{ api_name }} {
 
 	/**
 	*	@name fixNull
@@ -6,7 +6,7 @@ public class util {
 	*	@param String i
 	**/
 	public static String fixNull(String i){
-		return string.isBlank(i) : '' ? i;
+		return string.isBlank(i) ? '' : i;
 	}	
 
 	/**
@@ -24,7 +24,7 @@ public class util {
 	*	@param Decimal i
 	**/
 	public static Decimal fixNull(Decimal i){
-		return i == null, 0, i;
+		return i == null ? 0 : i;
 	}
 
 	/**
