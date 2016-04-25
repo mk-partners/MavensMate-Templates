@@ -45,7 +45,6 @@
             ]
         },
         {  
-<<<<<<< HEAD
             "name":"Util",
             "file_name":"Util.cls",
             "description":"An Apex Class containing common Utility methods",
@@ -60,9 +59,7 @@
         },
         {  
             "name":"Webservice - Array",
-=======
             "name":"Webservice",
->>>>>>> 3339ac07c758cf5205a216291715858a137efce8
             "file_name":"WebserviceArray.cls",
             "description":"An Apex Webservice that receives data",
             "author":"MavensMate",
