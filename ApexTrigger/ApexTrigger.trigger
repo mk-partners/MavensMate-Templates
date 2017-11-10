@@ -20,12 +20,12 @@ trigger {{ api_name }} on {{ object_name }} (
 	    //	{{ object_name }}_Helper.afterUpdate(Trigger.New, Trigger.Old);
 		}
 		if ( Trigger.isBefore && Trigger.isDelete ) {
-	    //	{{ object_name }}_Helper.beforeDelete(Trigger.New);
+	    //	{{ object_name }}_Helper.beforeDelete(Trigger.Old);
 		}
 		if ( Trigger.isAfter && Trigger.isDelete ) {
-	    //	{{ object_name }}_Helper.afterDelete(Trigger.New, Trigger.Old);
+	    //	{{ object_name }}_Helper.afterDelete(Trigger.Old);
 		}
 		if ( Trigger.isAfter && Trigger.isUndelete ) {
-	    //	{{ object_name }}_Helper.afterUndelete(Trigger.Old);
+	    //	{{ object_name }}_Helper.afterUndelete(Trigger.New);
 		}
 }
