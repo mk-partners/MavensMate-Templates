@@ -1,3 +1,11 @@
+/**
+* @author MK Partners, Inc.
+* @date
+* @group
+* @group-content
+* @name {{ api_name }}
+* @description
+**/
 public class {{ api_name }} {
 
 	/**

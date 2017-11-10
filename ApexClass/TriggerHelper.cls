@@ -3,9 +3,14 @@ public class {{ api_name }} {
     public static Map<String, Schema.SObjectField> FIELD_MAP = Schema.SObjectType.{{ object_name }}.fields.getMap();
 
     /**
+    * @author MK Partners, Inc.
+    * @date
+    * @group
+    * @group-content
     * @name beforeInsert
     * @description
-    * @param
+    * @param {List<{{ object_name }}>} newList
+    * @return void
     **/
     public static void beforeInsert(List<{{ object_name }}> newList){
         for ( Integer i=0;i<newList.size();i++ ){
@@ -14,9 +19,14 @@ public class {{ api_name }} {
     }
 
     /**
+    * @author MK Partners, Inc.
+    * @date
+    * @group
+    * @group-content
     * @name afterInsert
     * @description
-    * @param
+    * @param {List<{{ object_name }}>} newList
+    * @return void
     **/
     public static void afterInsert(List<{{ object_name }}> newList){
         for ( Integer i=0;i<newList.size();i++ ){
